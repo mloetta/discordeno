@@ -1,9 +1,9 @@
 import { createGatewayManager, GatewayIntents } from "discordeno";
 import { rest } from "./rest";
-import { AUTHORIZATION, SERVER_URL, SHARD_SERVER_URL } from "../utils/variables";
+import { AUTHORIZATION, SERVER_URL, SHARD_SERVER_URL, TOKEN } from "../utils/variables";
 
 export const gateway = createGatewayManager({
-  token: '',
+  token: TOKEN,
   intents: GatewayIntents.Guilds,
   connection: await rest.getSessionInfo(),
   resharding: {

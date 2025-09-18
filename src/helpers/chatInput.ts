@@ -1,5 +1,7 @@
-import type { CreateSlashApplicationCommand, Interaction } from "discordeno";
+import type { Bot, CreateSlashApplicationCommand } from "discordeno";
+import type { Interaction } from "../types/types";
 
 export interface ChatInput extends CreateSlashApplicationCommand {
-  run(interaction: Interaction, args: Record<string, any>): Promise<any>
+  acknowledge?: boolean
+  run(interaction: Interaction, args: Record<string, any>): any
 }

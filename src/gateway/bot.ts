@@ -1,8 +1,9 @@
 import { createBot, DiscordMessageReferenceType } from "discordeno";
 import * as util from 'util'
+import { TOKEN } from "../utils/variables";
 
 const bot = createBot({
-  token: '',
+  token: TOKEN,
   desiredProperties: {
     user: {
       id: true,

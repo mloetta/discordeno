@@ -3,10 +3,13 @@ import type { ChatInput } from "../helpers/chatInput";
 import type { ContextMenu } from "../helpers/contextMenu";
 import { ReadDirectory } from "../utils/utils";
 import { rest } from "../rest/rest";
+import { join } from "path/posix";
 
 const cache = new Collection<string, ChatInput & ContextMenu>()
-const commands = await ReadDirectory('./commands');
-for (const command of commands) {
+const commands = await ReadDirectory(join(__dirname, './commands'));
+for (const module of commands) {
+  const command = module.command
+  
   cache.set(command.name, command)
 }
 
